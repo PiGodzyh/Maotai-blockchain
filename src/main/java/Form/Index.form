@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Form.Index">
+  <grid id="27dc6" binding="main" layout-manager="GridLayoutManager" row-count="9" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="91" y="46" width="600" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none" title="茅台溯源"/>
+    <children>
+      <component id="58214" class="javax.swing.JTextField" binding="addProductIdInput">
+        <constraints>
+          <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="cc108" class="javax.swing.JLabel" binding="addProductIdLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="产品编号"/>
+        </properties>
+      </component>
+      <component id="6f270" class="javax.swing.JLabel" binding="fromLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="From"/>
+        </properties>
+      </component>
+      <component id="37c73" class="javax.swing.JTextField" binding="fromInput">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="ce38b" class="javax.swing.JLabel" binding="toLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="To"/>
+        </properties>
+      </component>
+      <component id="8027" class="javax.swing.JTextField" binding="toInput">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="e175b" class="javax.swing.JButton" binding="addButton">
+        <constraints>
+          <grid row="4" column="0" row-span="4" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="添加交易"/>
+        </properties>
+      </component>
+      <component id="8e8ba" class="javax.swing.JButton" binding="traceButton">
+        <constraints>
+          <grid row="4" column="3" row-span="4" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="溯源"/>
+        </properties>
+      </component>
+      <component id="ba761" class="javax.swing.JTextField" binding="traceProductIdInput">
+        <constraints>
+          <grid row="0" column="4" row-span="4" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="2051f" class="javax.swing.JLabel" binding="traceProduceIdLabel">
+        <constraints>
+          <grid row="0" column="3" row-span="4" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="产品编号"/>
+        </properties>
+      </component>
+      <grid id="d9e27" binding="splitPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="2" row-span="8" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="3" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <foreground color="-1713914"/>
+        </properties>
+        <border type="none" title=""/>
+        <children/>
+      </grid>
+      <scrollpane id="4210a" binding="traceResultPane">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="94f7e" class="javax.swing.JList" binding="traceResultList">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
+  </grid>
+</form>
