@@ -9,21 +9,26 @@ public class Block {
     private Date timestamp;
     private ArrayList<Transaction> transactions;
 
+    public String getPreviousHash(){
+        return previousHash;
+    }
+
     Block(String previousHash, Date timestamp, ArrayList<Transaction> transactions) {
         this.previousHash = previousHash;
         this.timestamp = timestamp;
         this.transactions = transactions;
-        calculateTransactionHash();
+        this.transactionHash = calculateTransactionHash();
     }
 
-    private void calculateTransactionHash() {
+    private String calculateTransactionHash() {
         StringBuilder input = new StringBuilder();
         for (Transaction transaction : transactions) {
             input.append(transaction.calculateHash());
         }
-        this.transactionHash = HashUtil.calculateHash(input.toString());
+        return this.transactionHash = HashUtil.calculateHash(input.toString());
     }
 
+    // 计算块头Hash
     public String calculateHash() {
         String input = this.previousHash + this.transactionHash + this.timestamp;
         return HashUtil.calculateHash(input);
@@ -31,5 +36,9 @@ public class Block {
 
     public ArrayList<Transaction> getTransactions(){
         return this.transactions;
+    }
+
+    public Boolean validate(){
+        return this.transactionHash.equals(calculateTransactionHash());
     }
 }

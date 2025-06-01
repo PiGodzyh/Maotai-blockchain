@@ -47,7 +47,7 @@ public class BlockchainManager {
         Gson gson = new Gson();
         String json = gson.toJson(blockchain); // 对象 → JSON 字符串
 
-        // 写入文件（可指定编码，如 UTF-8）
+        // 写入文件
         try (FileWriter writer = new FileWriter(filename, StandardCharsets.UTF_8)) {
             writer.write(json);
         }
@@ -60,6 +60,10 @@ public class BlockchainManager {
         try (FileReader reader = new FileReader(filename, StandardCharsets.UTF_8)) {
             return gson.fromJson(reader, Blockchain.class); // JSON → 对象
         }
+    }
+
+    public Boolean validateBlockchain(){
+        return blockchain.validateBlocks();
     }
 
     public Boolean addTransaction(Transaction transaction) throws IOException, ClassNotFoundException {

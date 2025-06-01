@@ -60,7 +60,7 @@ public class Blockchain {
         return transactions;
     }
 
-    // 验证交易
+    // 找到指定编号的最近交易
     private Transaction findLatestTransaction(String productId)
     {
         // 处理未进入区块链的数据
@@ -78,5 +78,21 @@ public class Blockchain {
             }
         }
         return null;
+    }
+
+    // 验证block
+    public Boolean validateBlocks(){
+        String previousHash = "";
+        for(Block block : blocks){
+            // 验证块内哈希
+            if(!block.validate())
+                return false;
+
+            // 验证链哈希
+            if(!previousHash.isEmpty() && !block.getPreviousHash().equals(previousHash))
+                return false;
+            previousHash = block.calculateHash();
+        }
+        return true;
     }
 }

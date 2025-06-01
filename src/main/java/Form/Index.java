@@ -38,6 +38,12 @@ public class Index {
 
     public Index() throws IOException, ClassNotFoundException {
         manager = BlockchainManager.getInstance();
+
+        // 验证区块链是否被篡改
+        if (!manager.validateBlockchain()) {
+            JOptionPane.showMessageDialog(null, "区块链已被篡改");
+            System.exit(0);
+        }
         // 添加交易记录
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -71,6 +77,7 @@ public class Index {
 
         if (productId.isEmpty() || from.isEmpty() || to.isEmpty()) {
             JOptionPane.showMessageDialog(null, "请输入完整信息");
+            return;
         }
         if (!manager.addTransaction(new Transaction(productId, from, to))) {
             JOptionPane.showMessageDialog(null, "非法交易");
